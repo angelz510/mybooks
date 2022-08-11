@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import Search from "./components/Search/Search";
 
 function App() {
   useEffect(() => {
@@ -12,7 +13,11 @@ function App() {
     };
     bookSearch();
   }, []);
-  return <div className="App"></div>;
+  return (
+    <>
+      <Search />
+    </>
+  );
 }
 
 export default App;
