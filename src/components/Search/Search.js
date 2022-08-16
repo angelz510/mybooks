@@ -4,12 +4,14 @@ const Search = () => {
   return (
     <div className="search-container">
       <div className="search-header">
-        <h1>In the end, we’ll all become stories.</h1>
+        <h1 className="search-header-title">Welcome to your library.</h1>
       </div>
-      <div className="search-input">
-        <h2>Search A Book</h2>
-        <input type="text" placeholder="Search..." />
-        <button>Search</button>
+      <div className="search-input-container">
+        <h2 className="search-input-title">Search Books</h2>
+        <div className="search-input">
+          <input type="text" placeholder="Search..." />
+          <button>Search</button>
+        </div>
       </div>
     </div>
   );
