@@ -70,7 +70,7 @@
   margin: 0 auto;
   margin-top: 25px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 0.5fr));
+  gap: 30px;
   box-sizing: border-box;
 }
