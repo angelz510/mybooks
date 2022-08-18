@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../Modal/Modal";
 import "./Card.css";
 
 const Card = ({ book }) => {
+  const [show, setShow] = useState(false);
+  const [bookInfo, setBookInfo] = useState();
   return (
     <>
       {book.map((item) => {
@@ -9,14 +12,30 @@ const Card = ({ book }) => {
           item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail;
         if (thumbnail !== undefined) {
           return (
-            <div className="books-card" key={item.id}>
-              <img src={thumbnail} alt="" />
-              <div className="book-details">
-                <h3 className="book-title">{item.volumeInfo.title}</h3>
-                <p className="book-author">Author: {item.volumeInfo.authors}</p>
-                <p>Publish Date: {item.volumeInfo.publishedDate}</p>
+            <>
+              <div
+                className="books-card"
+                key={item.id}
+                onClick={() => {
+                  setShow(true);
+                  setBookInfo(item);
+                }}
+              >
+                <img src={thumbnail} alt="" />
+                <div className="book-details">
+                  <h3 className="book-title">{item.volumeInfo.title}</h3>
+                  <p className="book-author">
+                    Author: {item.volumeInfo.authors.join(", ")}
+                  </p>
+                  <p>Published: {item.volumeInfo.publishedDate}</p>
+                </div>
               </div>
-            </div>
+              <Modal
+                show={show}
+                item={bookInfo}
+                onClose={() => setShow(false)}
+              />
+            </>
           );
         } else {
           return null;

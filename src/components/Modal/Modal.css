@@ -1,0 +1,84 @@
+.modal {
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-inner {
+  background: #943d24;
+  width: 700px;
+  height: 550px;
+  padding: 1.5rem;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 1.3rem;
+  border-radius: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal-details {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal .modal-inner .modal-details img {
+  margin-right: 20px;
+  width: 150px;
+  height: 200px;
+}
+
+.modal-book-title {
+  color: #fffbf0;
+}
+
+.modal-book-author {
+  margin-top: 10px;
+  color: #2d2d2d;
+}
+
+.modal-book-publisher {
+  color: #282612;
+}
+
+.modal-button {
+  outline: none;
+  border: none;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #e4ddf4;
+  color: #282612;
+  font-weight: bold;
+  padding: 0.8rem 0.8rem;
+}
+
+.modal-button:hover {
+  background-color: rgb(57, 181, 57);
+  cursor: pointer;
+}
+
+.modal-book-description {
+  margin-top: 2rem;
+  text-align: justify;
+  font-size: 13px;
+  color: #fffbf0;
+}
