@@ -18,7 +18,7 @@ const Modal = ({ show, item, onClose }) => {
             <div className="details-info">
               <h1 className="modal-book-title">{item.volumeInfo.title}</h1>
               <h3 className="modal-book-author">
-                {item.volumeInfo.authors.join(", ")}
+                {item.volumeInfo.authors && item.volumeInfo.authors.join(", ")}
               </h3>
               <h4 className="modal-book-publisher">
                 {item.volumeInfo.publisher}

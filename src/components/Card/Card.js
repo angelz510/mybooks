@@ -12,10 +12,9 @@ const Card = ({ book }) => {
           item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail;
         if (thumbnail !== undefined) {
           return (
-            <>
+            <React.Fragment key={item.id}>
               <div
                 className="books-card"
-                key={item.id}
                 onClick={() => {
                   setShow(true);
                   setBookInfo(item);
@@ -25,7 +24,9 @@ const Card = ({ book }) => {
                 <div className="book-details">
                   <h3 className="book-title">{item.volumeInfo.title}</h3>
                   <p className="book-author">
-                    Author: {item.volumeInfo.authors.join(", ")}
+                    Author:{" "}
+                    {item.volumeInfo.authors &&
+                      item.volumeInfo.authors.join(", ")}
                   </p>
                   <p>Published: {item.volumeInfo.publishedDate}</p>
                 </div>
@@ -35,7 +36,7 @@ const Card = ({ book }) => {
                 item={bookInfo}
                 onClose={() => setShow(false)}
               />
-            </>
+            </React.Fragment>
           );
         } else {
           return null;
